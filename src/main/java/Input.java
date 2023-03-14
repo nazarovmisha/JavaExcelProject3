@@ -17,8 +17,6 @@ public class Input {
 
     public static List<Student> inputStudents(String str) throws IOException {
         List<Student> listStudents = new ArrayList();
-
-
         FileInputStream fis = new FileInputStream(str);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheetStudents = workbook.getSheetAt(0);
@@ -32,7 +30,6 @@ public class Input {
             student.setFullName(rowStudents.getCell(1).getStringCellValue());
             student.setCurrentCourseNumber((int) rowStudents.getCell(2).getNumericCellValue());
             student.setAvgExamScore((float) rowStudents.getCell(3).getNumericCellValue());
-
         }
         return listStudents;
     }

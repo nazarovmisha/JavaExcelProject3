@@ -6,26 +6,23 @@ import java.io.IOException;
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
-        JsonUtil.studentsToJSON("src/main/resources/universityInfo.xlsx");
-        List<University> universities = Input.inputUniversities("src/main/resources/universityInfo.xlsx");
-        UniversityComparator universityComparator = ComparatorClass
-                .getUniversityEnum(UniversityEnum.FULL_NAME);
-        universities.stream()
-                .sorted(universityComparator)
-                .forEach(System.out::println);
-
         List<Student> students = Input.inputStudents("src/main/resources/universityInfo.xlsx");
-        StudentComparator studentComparator = ComparatorClass.getStudentEnum(StudentEnum.AVG_EXAM_SCORE);
-        students.stream()
-                .sorted(studentComparator.reversed())
-                .forEach(System.out::println);
+        String jsonStudentList = JsonUtil.studentListToJson(students);
+        System.out.println(jsonStudentList);
+        students.forEach(student -> {
+            String studentJsonObj = JsonUtil.studentsToJSON(student);
+            System.out.println(studentJsonObj);
+        });
+        List<University> universities = Input.inputUniversities("src/main/resources/universityInfo.xlsx");
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String jsonUniversities = gson.toJson(universities);
-        String jsonStudents = gson.toJson(students);
-        System.out.println(jsonUniversities);
-        System.out.println(jsonStudents);
+
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//        String jsonUniversities = gson.toJson(universities);
+//        String jsonStudents = gson.toJson(students);
+//        System.out.println(jsonUniversities);
+//        System.out.println(jsonStudents);
     }
 }
 
