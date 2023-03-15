@@ -16,6 +16,8 @@ public class Main {
         System.out.println(jsonStudentList);
 
         List<Student> newStudents = JsonUtil.fromJsonToStudentList(jsonStudentList);
+
+        System.out.println(newStudents);
         System.out.println("Сериализация элементов коллекции студентов");
         students.forEach(student -> {
             String studentJsonObj = JsonUtil.studentsToJSON(student);

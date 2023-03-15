@@ -1,5 +1,7 @@
 
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 
@@ -11,18 +13,25 @@ public class JsonUtil {
         return new GsonBuilder().setPrettyPrinting().create().toJson(student);
     }
 
-    public static String studentListToJson(List<Student>students){
+    public static String studentListToJson(List<Student> students) {
         return new GsonBuilder().setPrettyPrinting().create().toJson(students);
     }
-    public static String universityToJson(University university){
+
+    public static String universityToJson(University university) {
         return new GsonBuilder().setPrettyPrinting().create().toJson(university);
     }
 
-    public static String universityListToJson(List<University>universities){
+    public static String universityListToJson(List<University> universities) {
         return new GsonBuilder().setPrettyPrinting().create().toJson(universities);
     }
 
-    public static List<Student> fromJsonToStudentList(String string){
-        return new GsonBuilder().setPrettyPrinting().create().fromJson(string);
+    public static List<Student> fromJsonToStudentList(String string) {
+        return new GsonBuilder().setPrettyPrinting().create().fromJson(string,
+                new TypeToken<List<Student>>() {}.getType());
+    }
+
+    public static List<University> fromJsonToUniversityList(String string){
+        return new GsonBuilder().setPrettyPrinting().create().fromJson(string,
+                new TypeToken<List<University>>(){}.getType());
     }
 }

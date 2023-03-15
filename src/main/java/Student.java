@@ -6,8 +6,11 @@ import java.util.Objects;
 public class Student {
     @SerializedName("Имя")
     private String fullName;
+    @SerializedName("Айди университета")
     private String universityId;
+    @SerializedName("Номер курса")
     private int currentCourseNumber;
+    @SerializedName("Средний балл")
     private float avgExamScore;
 
     @Override
