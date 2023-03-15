@@ -27,11 +27,22 @@ public class JsonUtil {
 
     public static List<Student> fromJsonToStudentList(String string) {
         return new GsonBuilder().setPrettyPrinting().create().fromJson(string,
-                new TypeToken<List<Student>>() {}.getType());
+                new TypeToken<List<Student>>() {
+                }.getType());
     }
 
-    public static List<University> fromJsonToUniversityList(String string){
+    public static List<University> fromJsonToUniversityList(String string) {
         return new GsonBuilder().setPrettyPrinting().create().fromJson(string,
-                new TypeToken<List<University>>(){}.getType());
+                new TypeToken<List<University>>() {
+                }.getType());
+    }
+
+    public static Student fromJsonToStudent(String string) {
+        return new GsonBuilder().setPrettyPrinting().create().fromJson(string, Student.class);
+    }
+
+
+    public static University fromJsonToUniversity(String string) {
+        return new GsonBuilder().setPrettyPrinting().create().fromJson(string, University.class);
     }
 }
