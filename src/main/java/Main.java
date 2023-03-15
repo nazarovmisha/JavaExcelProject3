@@ -1,4 +1,6 @@
 
+
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -10,19 +12,24 @@ public class Main {
     public static void main(String[] args) throws IOException {
         List<Student> students = Input.inputStudents("src/main/resources/universityInfo.xlsx");
         String jsonStudentList = JsonUtil.studentListToJson(students);
+        System.out.println("Сериализация коллекций студентов");
         System.out.println(jsonStudentList);
+
+        List<Student> newStudents = JsonUtil.fromJsonToStudentList(jsonStudentList);
+        System.out.println("Сериализация элементов коллекции студентов");
         students.forEach(student -> {
             String studentJsonObj = JsonUtil.studentsToJSON(student);
             System.out.println(studentJsonObj);
         });
         List<University> universities = Input.inputUniversities("src/main/resources/universityInfo.xlsx");
-
-
-//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//        String jsonUniversities = gson.toJson(universities);
-//        String jsonStudents = gson.toJson(students);
-//        System.out.println(jsonUniversities);
-//        System.out.println(jsonStudents);
+        String jsonUniversityList = JsonUtil.universityListToJson(universities);
+        System.out.println("Сериализация коллекции университетов");
+        System.out.println(jsonUniversityList);
+        System.out.println("Сериализация элементов коллекции университетов");
+        universities.forEach(university -> {
+            String universityJsonObj = JsonUtil.universityToJson(university);
+            System.out.println(universityJsonObj);
+        });
     }
 }
 
