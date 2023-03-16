@@ -19,7 +19,6 @@ public class Main {
             System.out.println(studentJsonObj);
         });
 
-
         List<University> universities = Input.inputUniversities("src/main/resources/universityInfo.xlsx");
         String jsonUniversityList = JsonUtil.universityListToJson(universities);
         System.out.println("Сериализация коллекции университетов");
