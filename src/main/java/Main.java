@@ -10,6 +10,7 @@ public class Main {
         System.out.println(jsonStudentList);
         System.out.println("Десериализация в коллекцию студентов");
         List<Student> newStudents = JsonUtil.fromJsonToStudentList(jsonStudentList);
+        System.out.println("Коллекции равны по длине " + (newStudents.size()==students.size()));
         for (Student stud:newStudents){
             System.out.println(stud);
         }
