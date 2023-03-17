@@ -30,14 +30,15 @@ public class JsonUtil {
                 }.getType());
     }
 
+
+    public static Student fromJsonToStudent(String string) {
+        return new GsonBuilder().setPrettyPrinting().create().fromJson(string, Student.class);
+    }
+
     public static List<University> fromJsonToUniversityList(String string) {
         return new GsonBuilder().setPrettyPrinting().create().fromJson(string,
                 new TypeToken<List<University>>() {
                 }.getType());
-    }
-
-    public static Student fromJsonToStudent(String string) {
-        return new GsonBuilder().setPrettyPrinting().create().fromJson(string, Student.class);
     }
 
 

@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="12d411f2-eabb-4348-a8a8-e05ad7d28302" name="Changes" comment="New project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JsonUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +85,7 @@
       <workItem from="1678778401583" duration="10342000" />
       <workItem from="1678866398324" duration="6844000" />
       <workItem from="1678951934647" duration="2448000" />
-      <workItem from="1679038628183" duration="828000" />
+      <workItem from="1679038628183" duration="4465000" />
     </task>
     <task id="LOCAL-00001" summary="New project">
       <created>1678780030734</created>
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678955950777</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="New project">
+      <created>1679039496861</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679039496862</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
